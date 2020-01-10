@@ -1,0 +1,4 @@
+.kitchen/
+bionic64-vbox.box
+output-bionic64-vbox/
+packer_cache/

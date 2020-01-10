@@ -1,0 +1,19 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: shell
+
+platforms:
+  - name: bionic64_vbox
+    driver:
+      box: bionic64_vbox
+      provider: virtualbox
+
+
+verifier:
+   name: inspec
+
+suites:
+  - name: default
