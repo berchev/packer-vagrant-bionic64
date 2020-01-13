@@ -31,28 +31,6 @@ apt-get install -y thin-provisioning-tools ${APTARGS}
 apt-get install -y ${APTARGS} python-pip python3-pip git jq curl wget vim language-pack-en sysstat htop
 
 
-
-
-# Install and setup python3.6 as default + idle
-apt-get update
-apt-get install -y software-properties-common
-add-apt-repository -y ppa:jonathonf/python-3.6
-apt-get update
-apt-get install -y python3.6
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.5 1
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
-echo -ne '\n' | update-alternatives --config python3
-
-# Install all needed for Kitchen tool
-apt-get install -y rbenv ruby-dev ruby-bundler
-grep -i rbenv /home/vagrant/.bash_profile &>/dev/null || {
-  touch /home/vagrant/.bash_profile
-  chown vagrant.vagrant /home/vagrant/.bash_profile
-  echo 'eval "$(rbenv init -)"' | sudo tee -a /home/vagrant/.bash_profile
-  echo 'true' | sudo tee -a /home/vagrant/.bash_profile
-  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' | sudo tee -a /home/vagrant/.bash_profile
-}
-
 # prep for LXD
 cat > /etc/security/limits.d/lxd.conf <<EOF
 * soft nofile 1048576
