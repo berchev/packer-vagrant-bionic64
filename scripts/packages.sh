@@ -28,7 +28,7 @@ apt-get install -y build-essential ${APTARGS}
 apt-get install -y thin-provisioning-tools ${APTARGS}
 
 # some tools
-apt-get install -y ${APTARGS} python-pip python3-pip git jq curl wget vim language-pack-en sysstat htop tree
+apt-get install -y ${APTARGS} python-pip python3-pip git jq curl wget vim language-pack-en sysstat htop tree unzip
 
 
 # prep for LXD
